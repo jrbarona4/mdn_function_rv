@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            font-size: 2em;
+            margin: 10px 1px 0;
+        }
+    </style>
+</head>
+<body>
+    <input class = "numberInput" type="text">
+    <p></p>
+
+    <script>
+        const input = document.querySelector('.numberInput');
+        const para = document.querySelector('p');
+
+        function circumference(num){
+            return num * 2.0 * Math.PI;
+        }
+
+        input.addEventListener("change", () => {
+            const num = parseFloat(input.value);
+            if (isNaN(num)) {
+                para.textContent = "Enter a number";   
+            } else {
+                para.textContent = `The square root of ${num} is ${Math.sqrt(num)}.`;
+                para.textContent += ` The cube root of ${num} is ${Math.cbrt(num)}.`;
+                para.textContent += ` The circumference of ${num} is ${circumference(num)}.`;
+            }
+        });
+    </script>
+</body>
+</html>
